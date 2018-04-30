@@ -81,27 +81,50 @@ public class AutofitTextView extends TextView implements AutofitHelper.OnTextSiz
     /**
      * Returns whether or not the text will be automatically re-sized to fit its constraints.
      */
-    public boolean isSizeToFit() {
-        return mHelper.isEnabled();
+    public boolean isAutofitWidthEnabled() {
+        return mHelper.isAutofitWidthEnabled();
     }
 
     /**
-     * Sets the property of this field (sizeToFit), to automatically resize the text to fit its
+     * Sets the property of this field (autofitWidthEnabled), to automatically resize the text to fit its
      * constraints.
      */
-    public void setSizeToFit() {
-        setSizeToFit(true);
+    public void setAutofitWidthEnabled() {
+        setAutofitWidthEnabled(true);
     }
 
     /**
      * If true, the text will automatically be re-sized to fit its constraints; if false, it will
      * act like a normal TextView.
      *
-     * @param sizeToFit
+     * @param autofitWidthEnabled
      */
-    public void setSizeToFit(boolean sizeToFit) {
-        mHelper.setEnabled(sizeToFit);
+    public void setAutofitWidthEnabled(boolean autofitWidthEnabled) {
+        mHelper.setAutofitWidthEnabled(autofitWidthEnabled);
     }
+
+    /**
+     * Returns whether or not the text will be automatically re-sized to fit its height.
+     */
+     public boolean isAutofitHeightEnabled() {
+         return mHelper.isAutofitHeightEnabled();
+     }
+
+     /**
+      * Sets the property of this field (autofitHeightEnabled), to automatically resize the text to fit
+      * its height.
+      */
+     public void setAutofitHeightEnabled() {
+         setAutofitHeightEnabled(true);
+     }
+
+     /**
+      * Enables automatic text resizing to fit the textview height
+      * @param autofitHeightEnabled If true, the text will automatically be re-sized to fit its height
+      */
+     public void setAutofitHeightEnabled(boolean autofitHeightEnabled) {
+         mHelper.setAutofitHeightEnabled(autofitHeightEnabled);
+     }
 
     /**
      * Returns the maximum size (in pixels) of the text in this View.
@@ -115,7 +138,6 @@ public class AutofitTextView extends TextView implements AutofitHelper.OnTextSiz
      * is adjusted based on the current density and user font size preference.
      *
      * @param size The scaled pixel size.
-     *
      * @attr ref android.R.styleable#TextView_textSize
      */
     public void setMaxTextSize(float size) {
@@ -128,7 +150,6 @@ public class AutofitTextView extends TextView implements AutofitHelper.OnTextSiz
      *
      * @param unit The desired dimension unit.
      * @param size The desired size in the given units.
-     *
      * @attr ref android.R.styleable#TextView_textSize
      */
     public void setMaxTextSize(int unit, float size) {
@@ -147,7 +168,6 @@ public class AutofitTextView extends TextView implements AutofitHelper.OnTextSiz
      * is adjusted based on the current density and user font size preference.
      *
      * @param minSize The scaled pixel size.
-     *
      * @attr ref me.grantland.R.styleable#AutofitTextView_minTextSize
      */
     public void setMinTextSize(int minSize) {
@@ -158,9 +178,8 @@ public class AutofitTextView extends TextView implements AutofitHelper.OnTextSiz
      * Set the minimum text size to a given unit and value. See TypedValue for the possible
      * dimension units.
      *
-     * @param unit The desired dimension unit.
+     * @param unit    The desired dimension unit.
      * @param minSize The desired size in the given units.
-     *
      * @attr ref me.grantland.R.styleable#AutofitTextView_minTextSize
      */
     public void setMinTextSize(int unit, float minSize) {
