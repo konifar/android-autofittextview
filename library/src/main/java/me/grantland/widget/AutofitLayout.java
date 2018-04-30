@@ -14,11 +14,6 @@ import java.util.WeakHashMap;
 /**
  * A {@link ViewGroup} that re-sizes the text of it's children to be no larger than the width of the
  * view.
- *
- * @attr ref R.styleable.AutofitTextView_autofitWidthEnabled
- * @attr ref R.styleable.AutofitTextView_autofitHeightEnabled
- * @attr ref R.styleable.AutofitTextView_minTextSize
- * @attr ref R.styleable.AutofitTextView_precision
  */
 public class AutofitLayout extends FrameLayout {
 
